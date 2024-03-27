@@ -31,10 +31,10 @@ export default function CompleteMap() {
         coordProps: [0.55, 0.12]
       },
       "Pennsylvania": {
-        coordProps: [0.41, 0.83]
+        coordProps: [0.39, 0.83]
       },
       "Montana": {
-        coordProps: [0.25, 0.33]
+        coordProps: [0.22, 0.33]
       }
     }
 

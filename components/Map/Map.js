@@ -23,11 +23,13 @@ const MapChart = ({ setContent, setInset }) => {
                                     <Geography
                                         key={geo.rsmKey}
                                         geography={geo}
-                                        strokeWidth={4}
+                                        stroke="#FFF"
+                                        strokeWidth={0.5}
                                         style={{
                                             default: { fill: "#065f46" },
                                             hover: { fill: "#065f46" },
                                             pressed: { fill: "#065f46" },
+
                                         }}
                                         className="outline-none"
                                         onMouseEnter={() => {
@@ -43,7 +45,8 @@ const MapChart = ({ setContent, setInset }) => {
                                     <Geography
                                         key={geo.rsmKey}
                                         geography={geo}
-                                        strokeWidth={4}
+                                        stroke="#FFF"
+                                        strokeWidth={0.5}
                                         style={{
                                             default: { fill: "#d1d5db" },
                                             hover: { fill: "#d1d5db" },
