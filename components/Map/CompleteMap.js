@@ -1,9 +1,9 @@
 'use client'
 
-import MapTwo from "@/components/Map/Map";
+import Map from "@/components/Map/Map";
 import { useEffect, useState, useRef } from "react";
 
-export default function CompleteMap() {
+export default function CompleteMap({ activeColor, defaultColor, hoverColor }) {
   const [content, setContent] = useState("");
   const [topStyle, setTopStyle] = useState("")
   const [leftStyle, setLeftStyle] = useState("")
@@ -65,22 +65,22 @@ export default function CompleteMap() {
         <p className="text-lg text-gray-400">Inactive States</p>
       </div>
       <div className="">
-          <div className="relative z-0" ref={ref}>
-            <MapTwo setContent={setContent} />
-            <div className={`absolute pointer-events-none`} style={{
-              top: `${topStyle}px`,
-              left: `${leftStyle}px`
-            }}>
-              {
-                content !== "" &&
-                <div className="bg-white w-48 h-24 rounded-lg border py-2 px-4 shadow-lg transition-opacity ease-in duration-700 opacity-95 animate-fade">
-                  <p className="text-md text-gray-700 font-semibold p-0">{content}</p>
-                  <p className="text-md text-gray-500 p-0">Card Requests</p>
-                  <p className="text-xl font-bold text-green-700">15</p>
-                </div>
-              }
-            </div>
+        <div className="relative z-0" ref={ref}>
+          <Map setContent={setContent} activeColor={activeColor} defaultColor={defaultColor} hoverColor={hoverColor} />
+          <div className={`absolute pointer-events-none`} style={{
+            top: `${topStyle}px`,
+            left: `${leftStyle}px`
+          }}>
+            {
+              content !== "" &&
+              <div className="bg-white w-48 h-24 rounded-lg border py-2 px-4 shadow-lg transition-opacity ease-in duration-700 opacity-95 animate-fade">
+                <p className="text-md text-gray-700 font-semibold p-0">{content}</p>
+                <p className="text-md text-gray-500 p-0">Card Requests</p>
+                <p className="text-xl font-bold text-green-700">15</p>
+              </div>
+            }
           </div>
+        </div>
       </div>
     </div>
   );

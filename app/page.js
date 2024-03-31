@@ -13,7 +13,7 @@ export default function Home() {
   
   return (
     <div>
-      <CompleteMap />
+      <CompleteMap activeColor={"#065f46"} defaultColor={"#d1d5db"} hoverColor={"#e2f3eb"} />
     </div>
   );
 }

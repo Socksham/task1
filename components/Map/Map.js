@@ -5,7 +5,7 @@ import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import { scaleQuantile } from "d3-scale";
 import { csv } from "d3-fetch";
 
-const MapChart = ({ setContent, setInset }) => {
+const MapChart = ({ setContent, hoverColor, activeColor, defaultColor }) => {
 
     const activeStates = ["Montana", "California", "Pennsylvania"]
 
@@ -26,9 +26,9 @@ const MapChart = ({ setContent, setInset }) => {
                                         stroke="#FFF"
                                         strokeWidth={0.5}
                                         style={{
-                                            default: { fill: "#065f46" },
-                                            hover: { fill: "#065f46" },
-                                            pressed: { fill: "#065f46" },
+                                            default: { fill: activeColor },
+                                            hover: { fill: activeColor },
+                                            pressed: { fill: activeColor },
 
                                         }}
                                         className="outline-none"
@@ -48,9 +48,9 @@ const MapChart = ({ setContent, setInset }) => {
                                         stroke="#FFF"
                                         strokeWidth={0.5}
                                         style={{
-                                            default: { fill: "#d1d5db" },
-                                            hover: { fill: "#d1d5db" },
-                                            pressed: { fill: "#d1d5db" },
+                                            default: { fill: defaultColor },
+                                            hover: { fill: hoverColor },
+                                            pressed: { fill: hoverColor },
                                         }}
                                         className="outline-none"
                                         onMouseEnter={() => {
